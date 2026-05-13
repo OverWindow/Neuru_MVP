@@ -48,7 +48,7 @@ export function NeuruScreen({ selectedStage, onStageChange, onTabChange }: Neuru
       title: '청소년기',
       level: 'Lv. 100~149',
       description: '새로운 경험을 쌓는 시기',
-      image: 'dog3_noback.png',
+      image: 'dog_fallback.png',
       locked: true
     },
     {
@@ -56,7 +56,7 @@ export function NeuruScreen({ selectedStage, onStageChange, onTabChange }: Neuru
       title: '성년기',
       level: 'Lv. 150~199',
       description: '더 넓은 세상을 탐험하는 시기',
-      image: 'dog4_noback.png',
+      image: 'dog_fallback.png',
       locked: true
     }
   ];
@@ -155,17 +155,13 @@ export function NeuruScreen({ selectedStage, onStageChange, onTabChange }: Neuru
                       stage.locked ? 'bg-muted/60' : 'bg-background'
                     }`}
                   >
-                    {stage.locked ? (
-                      <div className="h-12 w-12 rounded-full bg-muted-foreground/30" />
-                    ) : (
-                      <img
-                        src={`${import.meta.env.BASE_URL}images/${stage.image}`}
-                        alt={`${stage.title} 느루`}
-                        className="h-full w-full object-contain"
-                        loading="eager"
-                        decoding="async"
-                      />
-                    )}
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/${stage.image}`}
+                      alt={`${stage.title} 느루`}
+                      className={`h-full w-full object-contain ${stage.locked ? 'opacity-70 grayscale' : ''}`}
+                      loading="eager"
+                      decoding="async"
+                    />
                   </div>
 
                   <div className={`text-xs font-medium ${isSelected ? 'text-primary' : 'text-foreground'}`}>
