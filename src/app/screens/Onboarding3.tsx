@@ -25,25 +25,29 @@ export function Onboarding3({ neuruStage, onNext }: Onboarding3Props) {
           배운 만큼 느루도 함께 자라요.
         </p>
 
-        <div className="flex items-end gap-2 mb-12">
+        <div className="flex items-end justify-center gap-1 mb-12">
           {stages.map((stage, index) => (
-            <div key={stage.name} className="flex flex-col items-center">
-              <div
-                className="bg-primary-light rounded-lg flex items-center justify-center mb-2"
-                style={{ width: stage.size * 0.4, height: stage.size * 0.4 }}
-              >
+            <div key={stage.name} className="flex items-center">
+              <div className="flex flex-col items-center">
                 <div
-                  className="rounded-full bg-primary"
-                  style={{
-                    width: stage.size * 0.15,
-                    height: stage.size * 0.15,
-                    opacity: 0.8
-                  }}
-                />
+                  className="bg-primary-light rounded-lg flex items-center justify-center mb-2"
+                  style={{ width: stage.size * 0.4, height: stage.size * 0.4 }}
+                >
+                  <div
+                    className="rounded-full bg-primary"
+                    style={{
+                      width: stage.size * 0.15,
+                      height: stage.size * 0.15,
+                      opacity: 0.8
+                    }}
+                  />
+                </div>
+                <span className="text-xs text-muted-foreground">{stage.name}</span>
               </div>
-              <span className="text-xs text-muted-foreground">{stage.name}</span>
               {index < stages.length - 1 && (
-                <ArrowRight size={12} className="text-muted-foreground mt-1 absolute" style={{ left: `${(index + 1) * 60}px` }} />
+                <div className="flex h-[40px] w-5 items-center justify-center self-start pt-0">
+                  <ArrowRight size={12} className="text-muted-foreground" />
+                </div>
               )}
             </div>
           ))}

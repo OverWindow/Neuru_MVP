@@ -110,12 +110,10 @@ export function UserInfoScreen({ onComplete }: UserInfoScreenProps) {
         </div>
       </div>
 
-      <div className="fixed bottom-0 left-0 right-0 bg-background p-6 border-t border-border">
-        <div className="max-w-md mx-auto">
-          <Button onClick={onComplete} fullWidth>
-            나의 학습 시작하기
-          </Button>
-        </div>
+      <div className="fixed bottom-0 left-1/2 z-20 w-full max-w-md -translate-x-1/2 bg-background p-6 border-t border-border">
+        <Button onClick={onComplete} fullWidth>
+          나의 학습 시작하기
+        </Button>
       </div>
     </div>
   );

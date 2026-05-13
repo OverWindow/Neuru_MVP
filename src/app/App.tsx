@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Onboarding1 } from './screens/Onboarding1';
 import { Onboarding2 } from './screens/Onboarding2';
 import { Onboarding3 } from './screens/Onboarding3';
@@ -34,6 +34,13 @@ export default function App() {
   const [quizProgress, setQuizProgress] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [neuruStage, setNeuruStage] = useState<NeuruStage>('child');
+
+  useEffect(() => {
+    ['dog1_noback.png', 'dog2_noback.png', 'dog3_noback.png', 'dog4_noback.png'].forEach((fileName) => {
+      const image = new Image();
+      image.src = `${import.meta.env.BASE_URL}images/${fileName}`;
+    });
+  }, []);
 
   const quizData = [
     {

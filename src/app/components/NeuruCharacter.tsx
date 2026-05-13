@@ -1,4 +1,4 @@
-export type NeuruStage = 'baby' | 'child' | 'teen' | 'adult' | 'legend';
+export type NeuruStage = 'baby' | 'child' | 'teen' | 'adult';
 
 interface NeuruCharacterProps {
   size?: 'small' | 'medium' | 'large';
@@ -21,8 +21,7 @@ export function NeuruCharacter({
     baby: 'dog1_noback.png',
     child: 'dog2_noback.png',
     teen: 'dog3_noback.png',
-    adult: 'dog4_noback.png',
-    legend: 'dog4_noback.png'
+    adult: 'dog4_noback.png'
   };
   
   return (
@@ -31,6 +30,8 @@ export function NeuruCharacter({
         src={`${import.meta.env.BASE_URL}images/${stageImages[stage]}`}
         alt="느루 강아지 캐릭터"
         className="h-full w-full object-contain"
+        loading="eager"
+        decoding="async"
         data-expression={expression}
         data-stage={stage}
       />

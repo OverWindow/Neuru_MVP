@@ -162,6 +162,8 @@ export function NeuruScreen({ selectedStage, onStageChange, onTabChange }: Neuru
                         src={`${import.meta.env.BASE_URL}images/${stage.image}`}
                         alt={`${stage.title} 느루`}
                         className="h-full w-full object-contain"
+                        loading="eager"
+                        decoding="async"
                       />
                     )}
                   </div>
